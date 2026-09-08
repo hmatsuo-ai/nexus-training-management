@@ -1,6 +1,14 @@
 # nexus-training-management
 
-Nexus技術研修の進捗管理スプレッドシートを再現・保守するためのGoogle Apps Scriptです。
+Nexus技術研修の研修生管理をGitHub Issuesで行うための運用リポジトリです。
+
+研修生ごとに1件のIssueを作成し、技術研修課題からGate5までの進捗、提出期限、判定、次のアクションを継続して管理します。作成時はIssuesの「研修生の進捗管理」フォームを使用してください。詳細は[研修生Issue運用](docs/issue-management.md)を参照してください。
+
+実名・連絡先・Slack/Gmail本文などの個人情報はIssueに保存せず、管理用の識別子のみを使用します。
+
+## 旧スプレッドシート運用
+
+以下のApps Scriptと仕様は、既存スプレッドシートを保守する必要がある場合のために残しています。今後の研修生管理の新規登録・進捗更新はGitHub Issuesを正とします。
 
 ## 含まれるもの
 

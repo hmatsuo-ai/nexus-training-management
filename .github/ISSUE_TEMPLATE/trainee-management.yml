@@ -1,0 +1,91 @@
+name: 研修生の進捗管理
+description: 研修生1名の技術研修課題からGate5までを継続して管理します。
+title: "[研修生] "
+labels:
+  - 研修生
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 取り扱い
+        このIssueには、氏名・メールアドレス・Slack/Gmail本文・アクセストークンなどの個人情報や機密情報を記載しません。研修生は管理用の識別子で記載します。
+  - type: input
+    id: trainee_id
+    attributes:
+      label: 研修生の識別子
+      description: 氏名ではなく、管理用の識別子を入力してください。
+      placeholder: "例: trainee-2026-001"
+    validations:
+      required: true
+  - type: input
+    id: owner
+    attributes:
+      label: 担当者
+      placeholder: "例: @担当者"
+    validations:
+      required: true
+  - type: input
+    id: start_date
+    attributes:
+      label: 開始日
+      placeholder: YYYY/MM/DD
+  - type: dropdown
+    id: current_phase
+    attributes:
+      label: 現在フェーズ
+      options:
+        - 技術研修課題
+        - Gate1
+        - Gate2
+        - Gate3
+        - Gate4
+        - Gate5
+        - 完了
+    validations:
+      required: true
+  - type: dropdown
+    id: status
+    attributes:
+      label: 進捗状況
+      options:
+        - 未着手
+        - 進行中
+        - 提出待ち
+        - レビュー中
+        - 要修正
+        - 合格
+        - 保留
+        - 完了
+    validations:
+      required: true
+  - type: input
+    id: due_date
+    attributes:
+      label: 次の提出期限
+      placeholder: YYYY/MM/DD
+  - type: textarea
+    id: next_action
+    attributes:
+      label: 次のアクション
+      description: 誰が、いつまでに、何をするかを記載してください。
+      placeholder: "例: 担当者が YYYY/MM/DD までに Gate1 のレビューを行う"
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: |
+        ## フェーズ進行
+        - [ ] 技術研修課題: 期限設定
+        - [ ] 技術研修課題: 提出確認
+        - [ ] 技術研修課題: レビュー・判定
+        - [ ] Gate1: 提出確認・判定
+        - [ ] Gate2: 提出確認・判定
+        - [ ] Gate3: 提出確認・判定
+        - [ ] Gate4: 提出確認・判定
+        - [ ] Gate5: 提出確認・判定
+        - [ ] 完了確認
+  - type: textarea
+    id: history
+    attributes:
+      label: 更新履歴
+      description: 初回登録時は空欄で構いません。以後はIssueコメントに日付・変更内容・根拠URLを残してください。
