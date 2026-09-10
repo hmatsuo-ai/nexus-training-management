@@ -8,15 +8,36 @@ body:
     attributes:
       value: |
         ## 取り扱い
-        このIssueには、氏名・メールアドレス・Slack/Gmail本文・アクセストークンなどの個人情報や機密情報を記載しません。研修生は管理用の識別子で記載します。
+        このリポジトリはプライベートかつアクセス制御された運用を前提とします。研修生管理に必要な氏名、メールアドレス、Slack識別情報、業務連絡などの個人情報は省略せず記録できます。パスワード、アクセストークン、APIキー、秘密鍵などの認証情報は記載しません。
+  - type: input
+    id: trainee_name
+    attributes:
+      label: 研修生氏名
+      description: 実名を入力してください。
+      placeholder: "例: 山田太郎"
+    validations:
+      required: true
   - type: input
     id: trainee_id
     attributes:
-      label: 研修生の識別子
-      description: 氏名ではなく、管理用の識別子を入力してください。
+      label: 管理用識別子
+      description: 既存の管理IDがある場合は入力してください。
       placeholder: "例: trainee-2026-001"
-    validations:
-      required: true
+  - type: input
+    id: email
+    attributes:
+      label: メールアドレス
+      placeholder: "例: user@example.com"
+  - type: input
+    id: slack_user_id
+    attributes:
+      label: SlackユーザーID
+      placeholder: "例: U0123456789"
+  - type: input
+    id: slack_profile_url
+    attributes:
+      label: SlackプロフィールURL
+      placeholder: "https://..."
   - type: input
     id: owner
     attributes:
